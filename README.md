@@ -37,4 +37,4 @@ Automated via **GitHub Actions**. Every push to `main` triggers a fresh migratio
 4.  Do not feed the developers (unless it's artisan crumbs).
 
 ---
-*Sophisticated silliness since 2023. All honks reserved.*
+*Sophisticated silliness since 2026. All honks reserved.*
