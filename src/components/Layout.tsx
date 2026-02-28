@@ -68,7 +68,7 @@ export const Footer = () => {
             <GooseFeet className="logo-icon" />
             <span className="logo-text">The Silly Goose</span>
           </div>
-          <p className="footer-tagline">Sophisticated silliness since 2023.</p>
+          <p className="footer-tagline">Sophisticated silliness since 2026.</p>
         </div>
         
         <div className="footer-links">
