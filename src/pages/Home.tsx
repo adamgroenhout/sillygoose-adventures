@@ -35,7 +35,7 @@ const Home = () => {
               </p>
             </div>
             <div className="manifesto-visual">
-              <div className="horizontal-line"></div>
+              <img src="/philosophy.png" alt="The Goose Philosophy" className="philosophy-img" />
             </div>
           </div>
         </section>

@@ -105,10 +105,13 @@
   max-width: 500px;
 }
 
-.horizontal-line {
-  height: 1px;
-  background: #e2e8f0;
+.philosophy-img {
   width: 100%;
+  max-width: 600px;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
 }
 
 /* Features */
