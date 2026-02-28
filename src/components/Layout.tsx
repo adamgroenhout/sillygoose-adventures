@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Footprints, Instagram, Twitter } from 'lucide-react';
+import { Instagram, Twitter } from 'lucide-react';
+import { GooseFeet } from './GooseFeet';
 import './Layout.css';
 
 export const Navbar = () => {
@@ -11,7 +12,7 @@ export const Navbar = () => {
     <nav className={`navbar ${isExpedition ? 'expedition' : 'landing'} ${isUrban ? 'dark' : ''}`}>
       <div className="container nav-content">
         <Link to="/" className="logo">
-          <Footprints className="logo-icon" />
+          <GooseFeet className="logo-icon" />
           <span className="logo-text">The Silly Goose</span>
         </Link>
         
@@ -40,7 +41,7 @@ export const Footer = () => {
       <div className="container footer-content">
         <div className="footer-brand">
           <div className="logo small">
-            <Footprints className="logo-icon" />
+            <GooseFeet className="logo-icon" />
             <span className="logo-text">The Silly Goose</span>
           </div>
           <p className="footer-tagline">Sophisticated silliness since 2023.</p>
