@@ -32,8 +32,7 @@ const Alpine = () => {
                 Where the air is thin, the silence is profound, and the honks echo into eternity. A journey for the boldest of waterfowl.
               </p>
               <div className="hero-actions">
-                <button className="btn-primary">Watch Log</button>
-                <button className="btn-secondary">View Map</button>
+                <a href="https://maps.app.goo.gl/ucWzzhGfr3aefvWz8" className="btn-secondary">View Map</a>
               </div>
             </div>
           </div>
