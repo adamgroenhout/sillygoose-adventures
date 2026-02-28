@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Instagram, Twitter, Menu, X } from 'lucide-react';
+import { Instagram, Twitter, Menu, X, Home } from 'lucide-react';
 import { GooseFeet } from './GooseFeet';
 import './Layout.css';
 
@@ -20,7 +20,7 @@ export const Navbar = () => {
           </Link>
           
           <div className="nav-links">
-            <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+            <Link to="/" className={`nav-link home-link ${location.pathname === '/' ? 'active' : ''}`}><Home size={16} className="nav-icon" /> Home</Link>
             <Link to="/adventure/alpine" className={`nav-link ${location.pathname === '/adventure/alpine' ? 'active' : ''}`}>Alpine</Link>
             <Link to="/adventure/gala" className={`nav-link ${location.pathname === '/adventure/gala' ? 'active' : ''}`}>Gala</Link>
             <Link to="/adventure/urban" className={`nav-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
@@ -35,7 +35,7 @@ export const Navbar = () => {
       {/* Mobile FAB Menu - Out of nav so fixed position is relative to viewport */}
       <div className={`mobile-fab-container ${isUrban ? 'dark' : ''}`}>
         <div className={`fab-menu ${isMenuOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+          <Link to="/" onClick={() => setIsMenuOpen(false)} className={`fab-link home-link ${location.pathname === '/' ? 'active' : ''}`}><Home size={16} className="nav-icon" /> Home</Link>
           <Link to="/adventure/alpine" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/alpine' ? 'active' : ''}`}>Alpine</Link>
           <Link to="/adventure/gala" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/gala' ? 'active' : ''}`}>Gala</Link>
           <Link to="/adventure/urban" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
