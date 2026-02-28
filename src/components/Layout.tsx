@@ -1,33 +1,57 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Instagram, Twitter } from 'lucide-react';
+import { Instagram, Twitter, Menu, X } from 'lucide-react';
 import { GooseFeet } from './GooseFeet';
 import './Layout.css';
 
 export const Navbar = () => {
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isExpedition = location.pathname.startsWith('/adventure');
   const isUrban = location.pathname === '/adventure/urban';
 
   return (
-    <nav className={`navbar ${isExpedition ? 'expedition' : 'landing'} ${isUrban ? 'dark' : ''}`}>
-      <div className="container nav-content">
-        <Link to="/" className="logo">
-          <GooseFeet className="logo-icon" />
-          <span className="logo-text">The Silly Goose</span>
-        </Link>
-        
-        <div className="nav-links">
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-          <Link to="/adventure/alpine" className={`nav-link ${location.pathname === '/adventure/alpine' ? 'active' : ''}`}>Alpine</Link>
-          <Link to="/adventure/gala" className={`nav-link ${location.pathname === '/adventure/gala' ? 'active' : ''}`}>Gala</Link>
-          <Link to="/adventure/urban" className={`nav-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
+    <>
+      <nav className={`navbar ${isExpedition ? 'expedition' : 'landing'} ${isUrban ? 'dark' : ''}`}>
+        <div className="container nav-content">
+          <Link to="/" className="logo">
+            <GooseFeet className="logo-icon" />
+            <span className="logo-text">The Silly Goose</span>
+          </Link>
           
-          <button className="nav-btn">
+          <div className="nav-links">
+            <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+            <Link to="/adventure/alpine" className={`nav-link ${location.pathname === '/adventure/alpine' ? 'active' : ''}`}>Alpine</Link>
+            <Link to="/adventure/gala" className={`nav-link ${location.pathname === '/adventure/gala' ? 'active' : ''}`}>Gala</Link>
+            <Link to="/adventure/urban" className={`nav-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
+
+            <button className="nav-btn">
+              Join the Gaggle
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile FAB Menu - Out of nav so fixed position is relative to viewport */}
+      <div className={`mobile-fab-container ${isUrban ? 'dark' : ''}`}>
+        <div className={`fab-menu ${isMenuOpen ? 'open' : ''}`}>
+          <Link to="/" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+          <Link to="/adventure/alpine" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/alpine' ? 'active' : ''}`}>Alpine</Link>
+          <Link to="/adventure/gala" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/gala' ? 'active' : ''}`}>Gala</Link>
+          <Link to="/adventure/urban" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
+          <button className="nav-btn fab-btn" onClick={() => setIsMenuOpen(false)}>
             Join the Gaggle
           </button>
         </div>
+        <button
+          className="fab-toggle"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
-    </nav>
+    </>
   );
 };
 
