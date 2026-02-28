@@ -16,20 +16,11 @@ export const Navbar = () => {
         </Link>
         
         <div className="nav-links">
-          {isExpedition ? (
-            <>
-              <Link to="/" className="nav-link">Home</Link>
-              <Link to="/adventure/alpine" className="nav-link">Adventures</Link>
-              <Link to="/adventure/gala" className="nav-link">Gear</Link>
-              <Link to="/adventure/urban" className="nav-link">About</Link>
-            </>
-          ) : (
-            <>
-              <a href="#pondering" className="nav-link">The Pondering</a>
-              <a href="#honk" className="nav-link">The Honk</a>
-              <a href="#waddle" className="nav-link">The Waddle</a>
-            </>
-          )}
+          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+          <Link to="/adventure/alpine" className={`nav-link ${location.pathname === '/adventure/alpine' ? 'active' : ''}`}>Alpine</Link>
+          <Link to="/adventure/gala" className={`nav-link ${location.pathname === '/adventure/gala' ? 'active' : ''}`}>Gala</Link>
+          <Link to="/adventure/urban" className={`nav-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
+          
           <button className="nav-btn">
             {isExpedition ? 'Book Now' : 'Join the Gaggle'}
           </button>

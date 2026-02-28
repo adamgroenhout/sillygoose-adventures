@@ -70,6 +70,11 @@
   color: var(--color-landing-primary);
 }
 
+.nav-link.active {
+  color: var(--color-landing-primary);
+  font-weight: 700;
+}
+
 .nav-btn {
   background: #526154;
   color: white;
