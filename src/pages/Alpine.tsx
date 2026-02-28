@@ -1,5 +1,5 @@
 import { Navbar, Footer } from '../components/Layout';
-import { Mountain, Thermometer, Clock, Wheat, CheckCircle2, AlertCircle, ExternalLink } from 'lucide-react';
+import { Mountain, Thermometer, Clock, Wheat, CheckCircle2, AlertCircle } from 'lucide-react';
 import './Adventure.css';
 
 const Alpine = () => {
