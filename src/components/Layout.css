@@ -85,16 +85,6 @@
   transition: transform 0.2s, opacity 0.2s;
 }
 
-.navbar.expedition .nav-btn {
-  background: #3182ce;
-  border-radius: 4px;
-}
-
-.navbar.dark .nav-btn {
-  background: #38bdf8;
-  color: var(--color-urban-dark);
-}
-
 .nav-btn:hover {
   opacity: 0.9;
   transform: translateY(-1px);

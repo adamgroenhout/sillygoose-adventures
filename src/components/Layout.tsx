@@ -22,7 +22,7 @@ export const Navbar = () => {
           <Link to="/adventure/urban" className={`nav-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
           
           <button className="nav-btn">
-            {isExpedition ? 'Book Now' : 'Join the Gaggle'}
+            Join the Gaggle
           </button>
         </div>
       </div>
