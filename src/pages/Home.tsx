@@ -25,7 +25,7 @@ const Home = () => {
         </section>
 
         {/* Manifesto Section */}
-        <section className="manifesto">
+        <section id="pondering" className="manifesto">
           <div className="container manifesto-grid">
             <div className="manifesto-text">
               <span className="section-label">OUR MANIFESTO</span>
@@ -41,7 +41,7 @@ const Home = () => {
         </section>
 
         {/* Features Section */}
-        <section className="features">
+        <section id="waddle" className="features">
           <div className="container features-grid">
             <div className="feature-card">
               <div className="feature-icon-box">
@@ -50,7 +50,7 @@ const Home = () => {
               <h3>The Waddle</h3>
               <p>A movement of pure grace, executed with rhythmic side-to-side precision. To waddle is to arrive without haste.</p>
             </div>
-            <div className="feature-card">
+            <div className="feature-card" id="honk">
               <div className="feature-icon-box">
                 <Mic2 size={24} strokeWidth={1.5} />
               </div>
