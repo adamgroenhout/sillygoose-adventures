@@ -125,10 +125,20 @@ const Alpine = () => {
           <div className="container">
             <h2 className="overview-title">The Route</h2>
             <div className="map-placeholder">
-              <div className="live-tracking">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12480.95701833896!2d-77.74706915174542!3d39.049448834015024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b66d5b60c4c959%3A0xcefc09d1f4cbaa61!2sGoose%20Creek%2C%20Virginia!5e1!3m2!1sen!2sus!4v1714150534125!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0, borderRadius: '1rem', position: 'absolute', top: 0, left: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Goose Creek Route Map"
+              ></iframe>
+              <div className="live-tracking" style={{ zIndex: 10 }}>
                 <span className="dot"></span> LIVE TRACKING
               </div>
-              <div className="map-label">Current Location</div>
+              <div className="map-label" style={{ zIndex: 10, position: 'absolute', bottom: '1.5rem', left: '50%', transform: 'translateX(-50%)' }}>Current Location</div>
             </div>
           </div>
         </section>
