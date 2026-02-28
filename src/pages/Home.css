@@ -12,7 +12,7 @@
   border-radius: 2rem;
   overflow: hidden;
   height: 600px;
-  background-image: url('https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&q=80&w=2000');
+  background-image: url('/goose.png');
   background-size: cover;
   background-position: center;
   display: flex;
