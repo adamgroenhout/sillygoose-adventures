@@ -1,0 +1,229 @@
+.page-home {
+  background: var(--color-landing-bg);
+  color: var(--color-landing-text);
+}
+
+.hero {
+  padding: 4rem 0;
+}
+
+.hero-card {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  height: 600px;
+  background-image: url('https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&q=80&w=2000');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.hero-btn {
+  background: white;
+  color: var(--color-landing-text);
+  padding: 1.25rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Manifesto */
+.manifesto {
+  padding: 8rem 0;
+}
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.section-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #a0aec0;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-landing-primary);
+}
+
+.section-desc {
+  font-size: 1.125rem;
+  color: #4a5568;
+  max-width: 500px;
+}
+
+.horizontal-line {
+  height: 1px;
+  background: #e2e8f0;
+  width: 100%;
+}
+
+/* Features */
+.features {
+  padding: 4rem 0 8rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-icon-box {
+  width: 48px;
+  height: 48px;
+  background: #f7fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  color: var(--color-landing-primary);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+/* Quote Section */
+.quote-section {
+  padding: 10rem 0;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1549488344-cbb6c34ce08b?auto=format&fit=crop&q=80&w=2000');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+}
+
+.quote-icon {
+  margin-bottom: 2rem;
+  opacity: 0.5;
+}
+
+.quote-content blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 3rem;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+.quote-content cite {
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+  font-style: normal;
+}
+
+/* Newsletter */
+.newsletter {
+  padding: 8rem 0;
+}
+
+.centered {
+  text-align: center;
+}
+
+.newsletter-box {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  margin: 2.5rem 0 1rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 1.25rem 2rem;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  background: #526154;
+  color: white;
+  padding: 1.25rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.newsletter-disclaimer {
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
