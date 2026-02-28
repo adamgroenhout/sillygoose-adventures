@@ -25,7 +25,7 @@
 }
 
 .alpine-bg {
-  background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000') center/cover;
+  background: url('/alpine.png') center/cover;
 }
 
 .gala-bg {
