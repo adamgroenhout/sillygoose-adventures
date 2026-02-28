@@ -241,3 +241,92 @@
   border-radius: 0.5rem;
   font-weight: 700;
 }
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .hero-grid {
+    gap: 3rem;
+  }
+
+  .urban-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .urban-hero {
+    padding: 4rem 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-img-box {
+    order: -1;
+  }
+
+  .urban-title {
+    font-size: 3rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+  }
+
+  .btn-dark, .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .moments-section {
+    padding: 4rem 0;
+  }
+
+  .shots-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shot-card {
+    height: 400px;
+  }
+
+  .urban-quote {
+    padding: 4rem 1rem;
+  }
+
+  .urban-quote blockquote {
+    font-size: 1.75rem;
+  }
+
+  .urban-newsletter {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .newsletter-dark-box {
+    padding: 3rem 1.5rem;
+  }
+
+  .title-large {
+    font-size: 2.5rem;
+  }
+
+  .dark-form {
+    flex-direction: column;
+  }
+
+  .dark-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .urban-title {
+    font-size: 2.25rem;
+  }
+
+  .title-large {
+    font-size: 2rem;
+  }
+}

@@ -283,3 +283,74 @@
 
 .text-center { text-align: center; }
 .disclaimer { font-size: 0.75rem; color: #a0aec0; }
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .gala-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gala-title {
+    font-size: 3rem;
+  }
+
+  .gala-desc {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-feature-card img {
+    height: 300px;
+  }
+
+  .gala-quote {
+    font-size: 1.25rem;
+    padding: 2rem 1rem;
+  }
+
+  .menu-section {
+    padding: 4rem 0;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .path-section {
+    padding: 2rem 0;
+  }
+
+  .path-card {
+    grid-template-columns: 1fr;
+  }
+
+  .path-info {
+    padding: 2rem;
+  }
+
+  .gala-newsletter {
+    padding: 4rem 0;
+  }
+
+  .gala-form {
+    flex-direction: column;
+  }
+
+  .gala-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .gala-title {
+    font-size: 2.25rem;
+  }
+
+  .location-tag {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+}
