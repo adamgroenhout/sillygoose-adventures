@@ -88,7 +88,6 @@ const Alpine = () => {
             <div className="section-header">
               <h2 className="overview-title">Technical Loadout</h2>
               <p>Professional grade equipment for the serious avian adventurer.</p>
-              <a href="#" className="download-link">Download Manifest</a>
             </div>
             <table className="loadout-table">
               <thead>
