@@ -76,7 +76,6 @@ const Alpine = () => {
               </div>
               <div className="gallery-side">
                 <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=400" alt="Camp" />
-                <img src="https://images.unsplash.com/photo-1549488344-cbb6c34ce08b?auto=format&fit=crop&q=80&w=400" alt="Tracks" />
               </div>
             </div>
           </div>
