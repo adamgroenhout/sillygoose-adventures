@@ -1,4 +1,4 @@
-export const GooseFeet = ({ className, size = 24 }: { className?: string, size?: number | string }) => {
+export const GooseFeet = ({ className, size = 36 }: { className?: string, size?: number | string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
