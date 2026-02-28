@@ -18,7 +18,7 @@ const Urban = () => {
         <section className="urban-hero container">
           <div className="hero-grid">
             <div className="hero-img-box">
-              <img src="https://images.unsplash.com/photo-1549488344-cbb6c34ce08b?auto=format&fit=crop&q=80&w=800" alt="Urban Goose" />
+              <img src="/urban.png" alt="Urban Goose" />
               <span className="img-label">FIG 1. THE STRUT</span>
             </div>
             <div className="hero-text">

@@ -31,7 +31,7 @@ const Gala = () => {
               An evening of refined tastes and scattered delights at the Grand Park Pavilion. Witness the sophisticated forage.
             </p>
             <div className="hero-feature-card">
-              <img src="https://images.unsplash.com/photo-1549488344-cbb6c34ce08b?auto=format&fit=crop&q=80&w=1200" alt="Gala" />
+              <img src="/crumbs.png" alt="Gala" />
               <div className="location-tag">
                 <MapPin size={14} />
                 <span>LOCATION</span>
