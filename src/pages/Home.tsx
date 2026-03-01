@@ -1,8 +1,11 @@
 import { Navbar, Footer } from '../components/Layout';
 import { Waves, Mic2, ChefHat, Quote } from 'lucide-react';
+import { useSubscribe } from '../hooks/useSubscribe';
 import './Home.css';
 
 const Home = () => {
+  const { email, setEmail, status, handleSubmit } = useSubscribe();
+
   return (
     <div className="page-home">
       <Navbar />
@@ -83,11 +86,25 @@ const Home = () => {
           <div className="container newsletter-box">
             <h2 className="section-title centered">Are You Silly Enough?</h2>
             <p className="centered">Join our exclusive gaggle for daily affirmations of goose-hood and updates on local bread availability.</p>
-            <form className="newsletter-form">
-              <input type="email" placeholder="Enter your email address" required />
-              <button type="submit">Subscribe to the Honk</button>
+            <form className="newsletter-form" onSubmit={handleSubmit}>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={status === 'submitting'}
+              />
+              <button type="submit" disabled={status === 'submitting'}>
+                {status === 'submitting' ? 'Waddling...' : 'Subscribe to the Honk'}
+              </button>
             </form>
-            <p className="newsletter-disclaimer centered">We respect your privacy. No spam, only honks.</p>
+            {status === 'success' && (
+              <p className="newsletter-success centered">Subscribed! Honk honk! A confirmation email is flying your way.</p>
+            )}
+            {status !== 'success' && (
+              <p className="newsletter-disclaimer centered">We respect your privacy. No spam, only honks.</p>
+            )}
           </div>
         </section>
       </main>

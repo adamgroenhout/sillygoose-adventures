@@ -1,9 +1,12 @@
 import { Navbar, Footer } from '../components/Layout';
 import { Star, Bookmark, MapPin, Mail, ChevronRight } from 'lucide-react';
+import { useSubscribe } from '../hooks/useSubscribe';
 import './Adventure.css';
 import './Gala.css';
 
 const Gala = () => {
+  const { email, setEmail, status, handleSubmit } = useSubscribe();
+
   const menu = [
     { title: 'The Artisan Croissant Heel', rating: 5, tag: 'Rare Find', desc: 'Discarded by a toddler in a stroller. Notes of butter, pavement, and a hint of grass. A truly...', image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400', location: 'BENCH #4' },
     { title: 'Seeded Multigrain Fragment', rating: 4, tag: 'Vintage', desc: 'Aged for approximately 30 minutes in direct sunlight. A robust crunch with an earthy...', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400', location: 'EAST LAWN' },
@@ -137,11 +140,25 @@ const Gala = () => {
             <Mail size={40} className="mail-icon" />
             <h2 className="section-title">Don't Miss the Next Course</h2>
             <p>Join the Silly Goose Society newsletter for updates on future foraging galas, honking etiquette, and seasonal migration patterns.</p>
-            <form className="gala-form">
-              <input type="email" placeholder="Enter your email address" required />
-              <button type="submit">Subscribe</button>
+            <form className="gala-form" onSubmit={handleSubmit}>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={status === 'submitting'}
+              />
+              <button type="submit" disabled={status === 'submitting'}>
+                {status === 'submitting' ? 'Waddling...' : 'Subscribe'}
+              </button>
             </form>
-            <p className="disclaimer">No spam, only breadcrumbs.</p>
+            {status === 'success' && (
+              <p className="gala-success">Subscribed! Honk honk! A confirmation email is flying your way.</p>
+            )}
+            {status !== 'success' && (
+              <p className="disclaimer">No spam, only breadcrumbs.</p>
+            )}
           </div>
         </section>
       </main>

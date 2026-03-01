@@ -1,8 +1,11 @@
 import { Navbar, Footer } from '../components/Layout';
 import { Mountain, Thermometer, Clock, Wheat, CheckCircle2, AlertCircle, Mail } from 'lucide-react';
+import { useSubscribe } from '../hooks/useSubscribe';
 import './Adventure.css';
 
 const Alpine = () => {
+  const { email, setEmail, status, handleSubmit } = useSubscribe();
+
   const stats = [
     { label: 'Elevation', value: '4,200m', icon: <Mountain size={18} /> },
     { label: 'Temperature', value: '-15°C', icon: <Thermometer size={18} /> },
@@ -149,11 +152,25 @@ const Alpine = () => {
             <Mail size={40} className="mail-icon" />
             <h2 className="section-title">Join the Expedition</h2>
             <p>Subscribe to our high-altitude newsletter for the latest updates on mountain foraging, cold-weather honking techniques, and avalanche safety for geese.</p>
-            <form className="alpine-form">
-              <input type="email" placeholder="Enter your email address" required />
-              <button type="submit">Subscribe</button>
+            <form className="alpine-form" onSubmit={handleSubmit}>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={status === 'submitting'}
+              />
+              <button type="submit" disabled={status === 'submitting'}>
+                {status === 'submitting' ? 'Waddling...' : 'Subscribe'}
+              </button>
             </form>
-            <p className="disclaimer">No spam, only crisp mountain air.</p>
+            {status === 'success' && (
+              <p className="success-message">Subscribed! Honk honk! A confirmation email is flying your way.</p>
+            )}
+            {status !== 'success' && (
+              <p className="disclaimer">No spam, only crisp mountain air.</p>
+            )}
           </div>
         </section>
       </main>

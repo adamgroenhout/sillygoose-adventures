@@ -1,8 +1,11 @@
 import { Navbar, Footer } from '../components/Layout';
 import { ArrowRight, Share2, Quote } from 'lucide-react';
+import { useSubscribe } from '../hooks/useSubscribe';
 import './Urban.css';
 
 const Urban = () => {
+  const { email, setEmail, status, handleSubmit } = useSubscribe();
+
   const shots = [
     { time: '07:00 AM', title: 'The Crosswalk Conundrum', image: 'https://images.unsplash.com/photo-1470219556762-1771e7f9427d?auto=format&fit=crop&q=80&w=600' },
     { time: '09:30 AM', title: 'Silent Observer', image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=600' },
@@ -82,11 +85,25 @@ const Urban = () => {
           <div className="container newsletter-dark-box">
             <h2 className="title-large">Never Miss a Honk</h2>
             <p>Join our exclusive mailing list for high-resolution wallpapers of geese in inappropriate urban settings.</p>
-            <form className="dark-form">
-              <input type="email" placeholder="Enter your email" required />
-              <button type="submit">Subscribe</button>
+            <form className="dark-form" onSubmit={handleSubmit}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={status === 'submitting'}
+              />
+              <button type="submit" disabled={status === 'submitting'}>
+                {status === 'submitting' ? 'Waddling...' : 'Subscribe'}
+              </button>
             </form>
-            <p className="disclaimer">No spam, just feathers. Unsubscribe anytime.</p>
+            {status === 'success' && (
+              <p className="urban-success">Subscribed! Honk honk! A confirmation email is flying your way.</p>
+            )}
+            {status !== 'success' && (
+              <p className="disclaimer">No spam, just feathers. Unsubscribe anytime.</p>
+            )}
           </div>
         </section>
       </main>
