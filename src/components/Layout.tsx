@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Instagram, Twitter, Menu, X, Home } from 'lucide-react';
 import { GooseFeet } from './GooseFeet';
+import { useGooseStorm } from '../contexts/GooseStormContext';
 import './Layout.css';
 
 export const Navbar = () => {
@@ -9,6 +10,7 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isExpedition = location.pathname.startsWith('/adventure');
   const isUrban = location.pathname === '/adventure/urban';
+  const { triggerGooseStorm } = useGooseStorm();
 
   return (
     <>
@@ -26,7 +28,7 @@ export const Navbar = () => {
             <Link to="/adventure/urban" className={`nav-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
             <Link to="/pond" className={`nav-link ${location.pathname === '/pond' ? 'active' : ''}`}>The Pond</Link>
 
-            <button className="nav-btn">
+            <button className="nav-btn" onClick={triggerGooseStorm}>
               Join the Gaggle
             </button>
           </div>
@@ -41,7 +43,7 @@ export const Navbar = () => {
           <Link to="/adventure/gala" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/gala' ? 'active' : ''}`}>Gala</Link>
           <Link to="/adventure/urban" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
           <Link to="/pond" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/pond' ? 'active' : ''}`}>The Pond</Link>
-          <button className="nav-btn fab-btn" onClick={() => setIsMenuOpen(false)}>
+          <button className="nav-btn fab-btn" onClick={() => { setIsMenuOpen(false); triggerGooseStorm(); }}>
             Join the Gaggle
           </button>
         </div>
