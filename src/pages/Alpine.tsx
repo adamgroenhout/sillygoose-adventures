@@ -149,7 +149,10 @@ const Alpine = () => {
             <Mail size={40} className="mail-icon" />
             <h2 className="section-title">Join the Expedition</h2>
             <p>Subscribe to our high-altitude newsletter for the latest updates on mountain foraging, cold-weather honking techniques, and avalanche safety for geese.</p>
-            <form className="alpine-form">
+            <form className="alpine-form" onSubmit={(e) => {
+              e.preventDefault();
+              alert('Subscribed!');
+            }}>
               <input type="email" placeholder="Enter your email address" required />
               <button type="submit">Subscribe</button>
             </form>

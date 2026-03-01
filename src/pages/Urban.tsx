@@ -82,7 +82,10 @@ const Urban = () => {
           <div className="container newsletter-dark-box">
             <h2 className="title-large">Never Miss a Honk</h2>
             <p>Join our exclusive mailing list for high-resolution wallpapers of geese in inappropriate urban settings.</p>
-            <form className="dark-form">
+            <form className="dark-form" onSubmit={(e) => {
+              e.preventDefault();
+              alert('Subscribed!');
+            }}>
               <input type="email" placeholder="Enter your email" required />
               <button type="submit">Subscribe</button>
             </form>

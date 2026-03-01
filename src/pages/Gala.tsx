@@ -137,7 +137,10 @@ const Gala = () => {
             <Mail size={40} className="mail-icon" />
             <h2 className="section-title">Don't Miss the Next Course</h2>
             <p>Join the Silly Goose Society newsletter for updates on future foraging galas, honking etiquette, and seasonal migration patterns.</p>
-            <form className="gala-form">
+            <form className="gala-form" onSubmit={(e) => {
+              e.preventDefault();
+              alert('Subscribed!');
+            }}>
               <input type="email" placeholder="Enter your email address" required />
               <button type="submit">Subscribe</button>
             </form>
