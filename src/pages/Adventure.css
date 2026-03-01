@@ -463,6 +463,18 @@
   cursor: pointer;
 }
 
+.alpine-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.success-message {
+  font-size: 1rem;
+  color: #3182ce;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
 .text-center {
   text-align: center;
 }

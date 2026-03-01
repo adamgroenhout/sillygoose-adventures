@@ -226,6 +226,18 @@
   font-weight: 600;
 }
 
+.newsletter-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.newsletter-success {
+  font-size: 1rem;
+  color: #526154;
+  font-weight: 600;
+  margin-top: -1rem;
+}
+
 .newsletter-disclaimer {
   font-size: 0.75rem;
   color: #a0aec0;
