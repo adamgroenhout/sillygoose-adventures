@@ -1,0 +1,103 @@
+.page-pond {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-exp-bg);
+  color: var(--color-exp-text);
+}
+
+.pond-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem 2rem 4rem; /* Match padding from other pages to account for nav */
+}
+
+.pond-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pond-title {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-exp-primary);
+  margin-bottom: 0.5rem;
+}
+
+.pond-subtitle {
+  font-size: 1.25rem;
+  color: #4a5568;
+}
+
+.pond-game-container {
+  width: 100%;
+  max-width: 800px;
+  height: 60vh;
+  min-height: 400px;
+  background-color: #63b3ed; /* Water blue */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  border: 8px solid #4299e1;
+}
+
+.pond-water {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: crosshair; /* Indicate it's clickable */
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), transparent 50%),
+              radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05), transparent 50%);
+}
+
+.lily-pad {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #48bb78; /* Green */
+  border-radius: 50%;
+  border-radius: 50% 50% 50% 5%; /* Make it look like a lily pad */
+  transform: rotate(45deg); /* Angle the cut */
+  box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+  pointer-events: none; /* Let clicks pass through to water */
+  z-index: 1;
+}
+
+.bread-crumb {
+  position: absolute;
+  font-size: 2rem;
+  transform: translate(-50%, -50%); /* Center the emoji on its coordinates */
+  animation: float 3s ease-in-out infinite alternate;
+  pointer-events: none; /* Let clicks pass through to water to move the goose */
+  z-index: 2;
+  transition: transform 0.2s;
+}
+
+.silly-goose-player {
+  position: absolute;
+  font-size: 4rem;
+  transform: translate(-50%, -50%); /* Center the goose on its coordinates */
+  transition: left 0.8s ease-out, top 0.8s ease-out; /* Smooth movement */
+  z-index: 3;
+  pointer-events: none; /* Let clicks pass through so we can click near it */
+}
+
+.goose-body {
+  animation: waddle 0.5s infinite alternate;
+  display: inline-block;
+}
+
+@keyframes float {
+  0% { transform: translate(-50%, -50%) translateY(0); }
+  100% { transform: translate(-50%, -50%) translateY(-5px); }
+}
+
+@keyframes waddle {
+  0% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
