@@ -24,6 +24,7 @@ export const Navbar = () => {
             <Link to="/adventure/alpine" className={`nav-link ${location.pathname === '/adventure/alpine' ? 'active' : ''}`}>Alpine</Link>
             <Link to="/adventure/gala" className={`nav-link ${location.pathname === '/adventure/gala' ? 'active' : ''}`}>Gala</Link>
             <Link to="/adventure/urban" className={`nav-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
+            <Link to="/pond" className={`nav-link ${location.pathname === '/pond' ? 'active' : ''}`}>The Pond</Link>
 
             <button className="nav-btn">
               Join the Gaggle
@@ -39,6 +40,7 @@ export const Navbar = () => {
           <Link to="/adventure/alpine" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/alpine' ? 'active' : ''}`}>Alpine</Link>
           <Link to="/adventure/gala" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/gala' ? 'active' : ''}`}>Gala</Link>
           <Link to="/adventure/urban" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/adventure/urban' ? 'active' : ''}`}>Urban</Link>
+          <Link to="/pond" onClick={() => setIsMenuOpen(false)} className={`fab-link ${location.pathname === '/pond' ? 'active' : ''}`}>The Pond</Link>
           <button className="nav-btn fab-btn" onClick={() => setIsMenuOpen(false)}>
             Join the Gaggle
           </button>
