@@ -1,5 +1,5 @@
 import { Navbar, Footer } from '../components/Layout';
-import { Mountain, Thermometer, Clock, Wheat, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mountain, Thermometer, Clock, Wheat, CheckCircle2, AlertCircle, Mail } from 'lucide-react';
 import './Adventure.css';
 
 const Alpine = () => {
@@ -140,6 +140,20 @@ const Alpine = () => {
               </div>
               <div className="map-label" style={{ zIndex: 10, position: 'absolute', bottom: '1.5rem', left: '50%', transform: 'translateX(-50%)' }}>Current Location</div>
             </div>
+          </div>
+        </section>
+
+        {/* Alpine Newsletter */}
+        <section className="alpine-newsletter">
+          <div className="container text-center">
+            <Mail size={40} className="mail-icon" />
+            <h2 className="section-title">Join the Expedition</h2>
+            <p>Subscribe to our high-altitude newsletter for the latest updates on mountain foraging, cold-weather honking techniques, and avalanche safety for geese.</p>
+            <form className="alpine-form">
+              <input type="email" placeholder="Enter your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+            <p className="disclaimer">No spam, only crisp mountain air.</p>
           </div>
         </section>
       </main>
