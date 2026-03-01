@@ -1,10 +1,35 @@
+import { useState, useCallback } from 'react';
 import { Navbar, Footer } from '../components/Layout';
 import { Waves, Mic2, ChefHat, Quote } from 'lucide-react';
 import { useSubscribe } from '../hooks/useSubscribe';
 import './Home.css';
 
+interface GooseItem {
+  id: number;
+  left: number;
+  animationDuration: number;
+  fontSize: number;
+}
+
 const Home = () => {
   const { email, setEmail, status, handleSubmit } = useSubscribe();
+  const [geese, setGeese] = useState<GooseItem[]>([]);
+
+  const triggerGooseStorm = useCallback(() => {
+    const newGeese: GooseItem[] = Array.from({ length: 15 }).map((_, i) => ({
+      id: Date.now() + i,
+      left: Math.random() * 100,
+      animationDuration: 2 + Math.random() * 3,
+      fontSize: 2 + Math.random() * 3,
+    }));
+
+    setGeese((prev) => [...prev, ...newGeese]);
+
+    // Clean up after the longest animation completes
+    setTimeout(() => {
+      setGeese((prev) => prev.filter(g => !newGeese.find(ng => ng.id === g.id)));
+    }, 5000);
+  }, []);
 
   return (
     <div className="page-home">
@@ -21,8 +46,25 @@ const Home = () => {
                 <p className="hero-subtitle">
                   Experience the unbridled sophistication of simply being a silly goose in a serious world. Honk with dignity.
                 </p>
-                <button className="hero-btn">Begin the Journey</button>
+                <button className="hero-btn" onClick={triggerGooseStorm}>Begin the Journey</button>
               </div>
+            </div>
+
+            {/* The Goose Storm overlay */}
+            <div className="goose-storm-container">
+              {geese.map(goose => (
+                <div
+                  key={goose.id}
+                  className="goose-storm-item"
+                  style={{
+                    left: `${goose.left}vw`,
+                    animationDuration: `${goose.animationDuration}s`,
+                    fontSize: `${goose.fontSize}rem`,
+                  }}
+                >
+                  🪿 HONK
+                </div>
+              ))}
             </div>
           </div>
         </section>
